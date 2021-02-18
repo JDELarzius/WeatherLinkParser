@@ -1,0 +1,40 @@
+﻿<Window x:Class="Weatherlink_Parser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Weatherlink_Parser"
+        mc:Ignorable="d"
+        Title="Weatherlink Parser" Height="450" Width="800"
+        Closing="OnClose">
+    <Grid>
+        <TextBox x:Name="XMLLabel" Text="Choose Target File..." Height="27" VerticalAlignment="Top" Margin="134,10,134,0" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="JPEGLabel" Text="Choose Jpeg Directory..." Height="27" VerticalAlignment="Top" Margin="134,41,134,0" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="DatabaseLabel" Text="Choose Database..." Height="27" VerticalAlignment="Top" Margin="134,72,134,0" IsReadOnly="True" BorderThickness="0" VerticalContentAlignment="Center"/>
+        <Button x:Name="TargetXMLFileButton" Content="Target XML File" HorizontalAlignment="Left" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" Click="TargetXMLFileButtonClick"/>
+        <Button x:Name="TargetJPEGDirectoryButton" Content="Target JPEG Directory" HorizontalAlignment="Left" Height="27" Margin="10,41,0,0" VerticalAlignment="Top" Width="119" Click="TargetJPEGDirectoryButtonClick"/>
+        <Button x:Name="TargetDatabaseButton" Content="Target Database" HorizontalAlignment="Left" Height="27" Margin="10,72,0,0" VerticalAlignment="Top" Width="119" Click="TargetDatabaseButtonClick"/>
+        <Button x:Name="CreateDatabaseButton" Content="Create Database" HorizontalAlignment="Left" Height="27" Margin="663,107,0,0" VerticalAlignment="Top" Width="119" Click="CreateDatabaseButtonClick"/>
+        <Button x:Name="ForceUploadToday" Content="Force Upload Today" HorizontalAlignment="Left" Height="27" Margin="663,10,0,0" VerticalAlignment="Top" Width="119" Click="ForceUploadTodayClick"/>
+        <Button x:Name="ForceUploadDaily" Content="Force Daily Files" HorizontalAlignment="Left" Height="27" Margin="663,42,0,0" VerticalAlignment="Top" Width="119" Click="ForceUploadDailyFiles"/>
+        <Button x:Name="Start" Content="Start" HorizontalAlignment="Left" Height="27" Margin="663,138,0,0" VerticalAlignment="Top" Width="119" Click="StartButtonClick"/>
+        <Button x:Name="Stop" Content="Stop" HorizontalAlignment="Left" Height="27" Margin="663,170,0,0" VerticalAlignment="Top" Width="119" Click="StopButtonClick"/>
+        <Label Content="FTP Server" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="FTPServer" HorizontalAlignment="Left" Height="27" Margin="92,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" VerticalContentAlignment="Center"/>
+        <Label Content="Remote Path" HorizontalAlignment="Left" Margin="10,141,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="RemotePath" HorizontalAlignment="Left" Height="27" Margin="92,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" VerticalContentAlignment="Center"/>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="355,106,0,0" VerticalAlignment="Top" Height="27"/>
+        <TextBox x:Name="Username" HorizontalAlignment="Left" Height="27" Margin="423,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" VerticalContentAlignment="Center"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="358,139,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Margin="423,138,0,0" VerticalAlignment="Top" Width="235" Height="27" VerticalContentAlignment="Center"/>
+        <Label Content="Upload Frequency (Minutes):" HorizontalAlignment="Left" Margin="369,170,0,0" VerticalAlignment="Top" Width="165"/>
+        <TextBox x:Name="UploadFrequency" HorizontalAlignment="Left" Height="27" Margin="539,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" VerticalContentAlignment="Center"/>
+        <Border BorderBrush="DarkGray" BorderThickness="1" Margin="10,202,10,10">
+            <ScrollViewer>
+                <TextBlock x:Name="Output" TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Top"/>
+            </ScrollViewer>
+        </Border>
+        <Button Content="Export Log" HorizontalAlignment="Left" Height="27" Margin="663,75,0,0" VerticalAlignment="Top" Width="119" Click="ExportLog"/>
+    </Grid>
+</Window>
+
